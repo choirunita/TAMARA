@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# ⛔ JANGAN routing file & folder nyata
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# ✅ selain itu baru ke index.php
+RewriteRule ^ index.php [L]
